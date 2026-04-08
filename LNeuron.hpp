@@ -6,7 +6,7 @@
 #include <algorithm>
 
 class CLiverNeuron {
-private:
+public:
     // Динамический расчет масштаба чувствительности системы
     double calculate_scale(double min_n, double max_n) {
         double range = max_n - min_n;
@@ -14,7 +14,7 @@ private:
         return (1.0 / range) * 3.0; // Коэффициент усиления "пробуждения"
     }
 
-public:
+
     // Асимметричная нормализация с выделением критических зон
     double normalize_with_range(double val, double min_n, double max_n) {
         double scale = calculate_scale(min_n, max_n);
